@@ -96,6 +96,16 @@ function changeLoc(){
 const t=cities[Math.floor(Math.random() * (100))]
 return t
 }
+const mapOptions = {
+  mapTypeId: "satellite", // Use 'satellite' for satellite imagery
+  styles: [
+    {
+      featureType: "all",
+      elementType: "labels",
+      stylers: [{ visibility: "off" }],
+    },
+  ],
+};
 function App() {
   const [center,setCenter] =useState(changeLoc())    
   const [data,setData]=useState('')
@@ -110,7 +120,7 @@ function App() {
     <>
       
       <LoadScript googleMapsApiKey="AIzaSyBp4QAffaLvFnZMELsWzYtpF6PaasvQFFU">
-        <GoogleMap mapContainerStyle={containerStyle} center={{lat:center.lat-0.18,lng:center.long}} zoom={10.5} />
+        <GoogleMap mapContainerStyle={containerStyle} center={{lat:center.lat,lng:center.long}} zoom={11} options={mapOptions}/>
       </LoadScript>
       
       <input value={data} onChange={(e)=>setData(e.target.value)}></input>
