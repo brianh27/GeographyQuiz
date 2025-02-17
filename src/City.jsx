@@ -77,8 +77,9 @@ function changeLoc(){
     ]
     
   
-  
-  const t=cities[Math.floor(Math.random() * (100))]
+  const rand=Math.floor(Math.random() * (cities.length))
+  console.log(rand)
+  const t=cities[rand]
   console.log(t)
   return t
   }
