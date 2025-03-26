@@ -24,7 +24,7 @@ async function check({event,pot,setPot,setData,setPoints,setCenter,points,setDis
   event.preventDefault()
   setMessage('')
   setDisable(true)
-  const ans= await  ask({query:data+','+city,description:'This is a game where you have to guess what the city is based on a map. The user guesses the city on the left of the comma. The correct answer is the one on the right side. If it is correct iwht minor spelling errors or a different way or nickname of calling the city, return the single letter Y, else return a hint telling the user why they are wrong and helping them a little bit to the right answer.'})
+  const ans= await  ask({query:"This is the users guess:" +data+'\n Now this is the correct anwser:'+city,description:'This is a game where you have to guess what the city is based on a map. The user guesses the city on the left of the comma. The correct answer is the one on the right side. If it is correct iwht minor spelling errors or a different way or nickname of calling the city, return the single letter Y, else return a hint telling the user why they are wrong and helping them a little bit to the right answer.'})
   console.log(ans)
   showHint(false)
   if(ans!='Y'){
